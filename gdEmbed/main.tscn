@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://bfgkn7nxjbxfh"]
+
+[ext_resource type="Script" uid="uid://ddh825ese1h15" path="res://addons/dynamic_scene_browser/scene_manager.gd" id="1_h8k9x"]
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_h8k9x")

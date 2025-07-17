@@ -1,0 +1,233 @@
+[gd_scene load_steps=2 format=3 uid="uid://bdnhiq5lhkl8k"]
+
+[ext_resource type="Script" uid="uid://ckj77g3gtsxn" path="res://scenes/movement/platformer_movement/platformer_movement_demo.gd" id="1_platformer"]
+
+[node name="PlatformerMovementDemo" type="Node2D"]
+script = ExtResource("1_platformer")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(400, 300)
+
+[node name="Player" type="CharacterBody2D" parent="."]
+position = Vector2(400, 200)
+
+[node name="PlayerSprite" type="ColorRect" parent="Player"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+color = Color(1, 0.5, 0.2, 1)
+
+[node name="PlayerCollision" type="CollisionShape2D" parent="Player"]
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="InstructionPanel" type="Panel" parent="UI"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = -140.0
+offset_right = 350.0
+offset_bottom = -10.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/InstructionPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Title" type="Label" parent="UI/InstructionPanel/VBoxContainer"]
+layout_mode = 2
+text = "🦘 Platformer Movement"
+horizontal_alignment = 1
+
+[node name="Instructions" type="RichTextLabel" parent="UI/InstructionPanel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+bbcode_enabled = true
+text = "[b]Controls:[/b]
+• A/D or ←/→ to move horizontally
+• SPACE or Enter to jump
+• Adjust physics parameters
+
+[b]Features:[/b]
+• Gravity and acceleration
+• Coyote time (jump after leaving ground)
+• Jump buffering for better feel"
+
+[node name="ParameterPanel" type="Panel" parent="UI"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -280.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = 200.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/ParameterPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ParameterTitle" type="Label" parent="UI/ParameterPanel/VBoxContainer"]
+layout_mode = 2
+text = "⚙️ Physics Parameters"
+horizontal_alignment = 1
+
+[node name="GravityContainer" type="HBoxContainer" parent="UI/ParameterPanel/VBoxContainer"]
+layout_mode = 2
+
+[node name="GravityLabel" type="Label" parent="UI/ParameterPanel/VBoxContainer/GravityContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Gravity: 980 px/s²"
+
+[node name="GravitySlider" type="HSlider" parent="UI/ParameterPanel/VBoxContainer/GravityContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+min_value = 200.0
+max_value = 2000.0
+step = 50.0
+value = 1000.0
+
+[node name="JumpContainer" type="HBoxContainer" parent="UI/ParameterPanel/VBoxContainer"]
+layout_mode = 2
+
+[node name="JumpLabel" type="Label" parent="UI/ParameterPanel/VBoxContainer/JumpContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Jump: 400 px/s"
+
+[node name="JumpSlider" type="HSlider" parent="UI/ParameterPanel/VBoxContainer/JumpContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+min_value = 200.0
+max_value = 800.0
+step = 25.0
+value = 400.0
+
+[node name="SpeedContainer" type="HBoxContainer" parent="UI/ParameterPanel/VBoxContainer"]
+layout_mode = 2
+
+[node name="SpeedLabel" type="Label" parent="UI/ParameterPanel/VBoxContainer/SpeedContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Speed: 200 px/s"
+
+[node name="SpeedSlider" type="HSlider" parent="UI/ParameterPanel/VBoxContainer/SpeedContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+min_value = 50.0
+max_value = 400.0
+step = 25.0
+value = 200.0
+
+[node name="StatusPanel" type="Panel" parent="UI"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -280.0
+offset_top = -120.0
+offset_right = -10.0
+offset_bottom = -10.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/StatusPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="StatusTitle" type="Label" parent="UI/StatusPanel/VBoxContainer"]
+layout_mode = 2
+text = "📊 Live Status"
+horizontal_alignment = 1
+
+[node name="VelocityLabel" type="Label" parent="UI/StatusPanel/VBoxContainer"]
+layout_mode = 2
+text = "Velocity: (0.0, 0.0)"
+
+[node name="StateLabel" type="Label" parent="UI/StatusPanel/VBoxContainer"]
+layout_mode = 2
+text = "State: Falling"
+
+[node name="GroundLabel" type="Label" parent="UI/StatusPanel/VBoxContainer"]
+layout_mode = 2
+text = "Grounded: No"
+
+[node name="Ground" type="StaticBody2D" parent="."]
+position = Vector2(400, 550)
+
+[node name="GroundSprite" type="ColorRect" parent="Ground"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -400.0
+offset_top = -25.0
+offset_right = 400.0
+offset_bottom = 25.0
+color = Color(0.3, 0.7, 0.3, 1)
+
+[node name="GroundCollision" type="CollisionShape2D" parent="Ground"]
+
+[node name="Platform1" type="StaticBody2D" parent="."]
+position = Vector2(200, 450)
+
+[node name="PlatformSprite1" type="ColorRect" parent="Platform1"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -80.0
+offset_top = -10.0
+offset_right = 80.0
+offset_bottom = 10.0
+color = Color(0.6, 0.4, 0.2, 1)
+
+[node name="PlatformCollision1" type="CollisionShape2D" parent="Platform1"]
+
+[node name="Platform2" type="StaticBody2D" parent="."]
+position = Vector2(600, 350)
+
+[node name="PlatformSprite2" type="ColorRect" parent="Platform2"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -80.0
+offset_top = -10.0
+offset_right = 80.0
+offset_bottom = 10.0
+color = Color(0.6, 0.4, 0.2, 1)
+
+[node name="PlatformCollision2" type="CollisionShape2D" parent="Platform2"]

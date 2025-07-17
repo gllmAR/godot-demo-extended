@@ -1,0 +1,188 @@
+[gd_scene load_steps=2 format=3 uid="uid://b4tg2qk2a1dvj"]
+
+[ext_resource type="Script" path="res://scenes/midi/browser_permission/browser_permission_demo.gd" id="1_h8k3p"]
+
+[node name="BrowserPermissionDemo" type="Node2D"]
+script = ExtResource("1_h8k3p")
+
+[node name="UIContainer" type="VBoxContainer" parent="."]
+offset_right = 400.0
+offset_bottom = 600.0
+
+[node name="TitlePanel" type="Panel" parent="UIContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UIContainer/TitlePanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = -10.0
+
+[node name="TitleLabel" type="Label" parent="UIContainer/TitlePanel/VBoxContainer"]
+layout_mode = 2
+text = "🌐 MIDI Browser Permission Demo"
+horizontal_alignment = 1
+
+[node name="DescriptionLabel" type="Label" parent="UIContainer/TitlePanel/VBoxContainer"]
+layout_mode = 2
+text = "Demonstrates how to properly handle browser MIDI permissions for web deployment"
+autowrap_mode = 3
+
+[node name="StatusPanel" type="Panel" parent="UIContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UIContainer/StatusPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = -10.0
+
+[node name="StatusTitle" type="Label" parent="UIContainer/StatusPanel/VBoxContainer"]
+layout_mode = 2
+text = "📊 Permission Status"
+
+[node name="StatusLabel" type="Label" parent="UIContainer/StatusPanel/VBoxContainer"]
+layout_mode = 2
+text = "Checking platform..."
+autowrap_mode = 3
+
+[node name="ControlPanel" type="Panel" parent="UIContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UIContainer/ControlPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = -10.0
+
+[node name="ControlTitle" type="Label" parent="UIContainer/ControlPanel/VBoxContainer"]
+layout_mode = 2
+text = "🎛️ Controls"
+
+[node name="PermissionButton" type="Button" parent="UIContainer/ControlPanel/VBoxContainer"]
+layout_mode = 2
+text = "🔒 Request MIDI Permission"
+
+[node name="TestButton" type="Button" parent="UIContainer/ControlPanel/VBoxContainer"]
+layout_mode = 2
+text = "🎹 Test MIDI Input"
+
+[node name="InstructionsLabel" type="Label" parent="UIContainer/ControlPanel/VBoxContainer"]
+layout_mode = 2
+text = "1. Click 'Request MIDI Permission'
+2. Allow access when browser prompts
+3. Click 'Test MIDI Input'
+4. Play notes on connected MIDI device"
+autowrap_mode = 3
+
+[node name="DevicePanel" type="Panel" parent="UIContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UIContainer/DevicePanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = -10.0
+
+[node name="DeviceTitle" type="Label" parent="UIContainer/DevicePanel/VBoxContainer"]
+layout_mode = 2
+text = "📱 MIDI Devices"
+
+[node name="DevicesLabel" type="Label" parent="UIContainer/DevicePanel/VBoxContainer"]
+layout_mode = 2
+text = "No devices detected yet"
+autowrap_mode = 3
+
+[node name="LogPanel" type="Panel" parent="UIContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UIContainer/LogPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = -10.0
+
+[node name="LogTitle" type="Label" parent="UIContainer/LogPanel/VBoxContainer"]
+layout_mode = 2
+text = "📝 Activity Log"
+
+[node name="MessageLog" type="TextEdit" parent="UIContainer/LogPanel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+placeholder_text = "Activity will be logged here..."
+editable = false
+
+[node name="InfoArea" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 420.0
+offset_top = 20.0
+offset_right = 800.0
+offset_bottom = 500.0
+
+[node name="InfoBackground" type="ColorRect" parent="InfoArea"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0.1, 0.1, 0.1, 0.1)
+
+[node name="InfoLabel" type="Label" parent="InfoArea"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = -20.0
+offset_bottom = -20.0
+text = "🌐 Web MIDI Permission
+
+On web platforms, browsers require explicit user permission to access MIDI devices for security reasons.
+
+📋 Browser Support:
+✅ Chrome - Full Web MIDI support
+✅ Firefox - Full Web MIDI support  
+✅ Edge - Full Web MIDI support
+❌ Safari - No Web MIDI support
+
+🔧 Implementation:
+1. Call OS.open_midi_inputs()
+2. Browser shows permission dialog
+3. User must click 'Allow'
+4. MIDI input becomes available
+
+⚠️ Important Notes:
+• Permission must be requested from user interaction
+• Permission can be revoked by user
+• Always check for permission before using MIDI
+• Provide fallback for unsupported browsers
+
+🎹 For full MIDI demo with sampler and ADSR, see the Comprehensive MIDI Demo."
+autowrap_mode = 3
+vertical_alignment = 1

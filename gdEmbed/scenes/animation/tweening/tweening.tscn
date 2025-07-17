@@ -1,0 +1,151 @@
+[gd_scene load_steps=2 format=3 uid="uid://difwsjywls2bq"]
+
+[ext_resource type="Script" uid="uid://djmj7yh6ni02b" path="res://scenes/animation/tweening/tweening_demo.gd" id="1_tweening"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_tweening")
+
+[node name="Player" type="CharacterBody2D" parent="."]
+position = Vector2(400, 300)
+
+[node name="ColorRect" type="ColorRect" parent="Player"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -25.0
+offset_top = -25.0
+offset_right = 25.0
+offset_bottom = 25.0
+color = Color(0, 0.5, 1, 1)
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="TweeningPanel" type="Panel" parent="UI"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -320.0
+offset_right = -20.0
+offset_bottom = 350.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/TweeningPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TweenInfo" type="Label" parent="UI/TweeningPanel/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "Tweening: Ready"
+
+[node name="EasingInfo" type="Label" parent="UI/TweeningPanel/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8, 1, 1, 1)
+text = "Easing: Sine"
+
+[node name="TransitionInfo" type="Label" parent="UI/TweeningPanel/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.8, 1, 1)
+text = "Transition: In"
+
+[node name="DurationInfo" type="Label" parent="UI/TweeningPanel/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 0.8, 1)
+text = "Duration: 1.0s"
+
+[node name="ProgressInfo" type="Label" parent="UI/TweeningPanel/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.8, 0.8, 1)
+text = "Progress: 0%"
+
+[node name="ControlPanel" type="Panel" parent="UI"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = -200.0
+offset_right = 400.0
+offset_bottom = -20.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/ControlPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="DurationContainer" type="HBoxContainer" parent="UI/ControlPanel/VBoxContainer"]
+layout_mode = 2
+
+[node name="DurationLabel" type="Label" parent="UI/ControlPanel/VBoxContainer/DurationContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "Duration:"
+
+[node name="DurationSlider" type="HSlider" parent="UI/ControlPanel/VBoxContainer/DurationContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+min_value = 0.1
+max_value = 5.0
+step = 0.1
+value = 1.0
+
+[node name="EasingContainer" type="HBoxContainer" parent="UI/ControlPanel/VBoxContainer"]
+layout_mode = 2
+
+[node name="EasingLabel" type="Label" parent="UI/ControlPanel/VBoxContainer/EasingContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "Easing:"
+
+[node name="EasingOption" type="OptionButton" parent="UI/ControlPanel/VBoxContainer/EasingContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TransitionContainer" type="HBoxContainer" parent="UI/ControlPanel/VBoxContainer"]
+layout_mode = 2
+
+[node name="TransitionLabel" type="Label" parent="UI/ControlPanel/VBoxContainer/TransitionContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "Transition:"
+
+[node name="TransitionOption" type="OptionButton" parent="UI/ControlPanel/VBoxContainer/TransitionContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ButtonContainer" type="HBoxContainer" parent="UI/ControlPanel/VBoxContainer"]
+layout_mode = 2
+
+[node name="StartButton" type="Button" parent="UI/ControlPanel/VBoxContainer/ButtonContainer"]
+layout_mode = 2
+text = "Start Tween"
+
+[node name="StopButton" type="Button" parent="UI/ControlPanel/VBoxContainer/ButtonContainer"]
+layout_mode = 2
+text = "Stop"
+
+[node name="Instructions" type="Label" parent="UI/ControlPanel/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9, 0.9, 0.9, 1)
+text = "Animation Demo
+Move: Arrow Keys
+Reset: R
+Watch: Smooth animations and color transitions"

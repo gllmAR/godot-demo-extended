@@ -1,0 +1,595 @@
+{
+	"generated_at": "2025-07-17T08:09:34",
+	"scenes": {
+		"animation_basic_animation_basic_animation": {
+			"category": "animation",
+			"description": "Basic example showing animation",
+			"directory": "animation/basic_animation",
+			"name": "basic_animation",
+			"path": "res://scenes/animation/basic_animation/basic_animation.tscn",
+			"relative_path": "animation/basic_animation/basic_animation.tscn",
+			"subfolder": "basic_animation",
+			"tags": [
+				"beginner",
+				"animation"
+			],
+			"title": "Basic Animation"
+		},
+		"animation_state_machines_state_machines": {
+			"category": "animation",
+			"description": "Scene demonstrating state machines",
+			"directory": "animation/state_machines",
+			"name": "state_machines",
+			"path": "res://scenes/animation/state_machines/state_machines.tscn",
+			"relative_path": "animation/state_machines/state_machines.tscn",
+			"subfolder": "state_machines",
+			"tags": [
+				"state",
+				"machines"
+			],
+			"title": "State Machines"
+		},
+		"animation_tweening_tweening": {
+			"category": "animation",
+			"description": "Scene demonstrating tweening",
+			"directory": "animation/tweening",
+			"name": "tweening",
+			"path": "res://scenes/animation/tweening/tweening.tscn",
+			"relative_path": "animation/tweening/tweening.tscn",
+			"subfolder": "tweening",
+			"tags": [
+				"tweening"
+			],
+			"title": "Tweening"
+		},
+		"audio_advance_audioplayer_advance_audioplayer": {
+			"category": "audio",
+			"description": "Scene demonstrating advance audioplayer",
+			"directory": "audio/advance_audioplayer",
+			"name": "advance_audioplayer",
+			"path": "res://scenes/audio/advance_audioplayer/advance_audioplayer.tscn",
+			"relative_path": "audio/advance_audioplayer/advance_audioplayer.tscn",
+			"subfolder": "advance_audioplayer",
+			"tags": [
+				"advance",
+				"audioplayer"
+			],
+			"title": "Advance Audioplayer"
+		},
+		"audio_basic_audio_basic_audio_demo": {
+			"category": "audio",
+			"description": "Interactive demonstration of basic audio",
+			"directory": "audio/basic_audio",
+			"name": "basic_audio_demo",
+			"path": "res://scenes/audio/basic_audio/basic_audio_demo.tscn",
+			"relative_path": "audio/basic_audio/basic_audio_demo.tscn",
+			"subfolder": "basic_audio",
+			"tags": [
+				"beginner",
+				"audio",
+				"demo"
+			],
+			"title": "Basic Audio Demo"
+		},
+		"input_gamepad_input_gamepad_input": {
+			"category": "input",
+			"description": "Scene demonstrating gamepad input",
+			"directory": "input/gamepad_input",
+			"name": "gamepad_input",
+			"path": "res://scenes/input/gamepad_input/gamepad_input.tscn",
+			"relative_path": "input/gamepad_input/gamepad_input.tscn",
+			"subfolder": "gamepad_input",
+			"tags": [
+				"gamepad",
+				"input"
+			],
+			"title": "Gamepad Input"
+		},
+		"input_input_player": {
+			"category": "input",
+			"description": "Scene demonstrating input player",
+			"directory": "input",
+			"name": "input_player",
+			"path": "res://scenes/input/input_player.tscn",
+			"relative_path": "input/input_player.tscn",
+			"subfolder": "",
+			"tags": [
+				"input",
+				"player"
+			],
+			"title": "Input Player"
+		},
+		"input_keyboard_input_keyboard_input": {
+			"category": "input",
+			"description": "Scene demonstrating keyboard input",
+			"directory": "input/keyboard_input",
+			"name": "keyboard_input",
+			"path": "res://scenes/input/keyboard_input/keyboard_input.tscn",
+			"relative_path": "input/keyboard_input/keyboard_input.tscn",
+			"subfolder": "keyboard_input",
+			"tags": [
+				"keyboard",
+				"input"
+			],
+			"title": "Keyboard Input"
+		},
+		"input_mouse_input_mouse_input": {
+			"category": "input",
+			"description": "Scene demonstrating mouse input",
+			"directory": "input/mouse_input",
+			"name": "mouse_input",
+			"path": "res://scenes/input/mouse_input/mouse_input.tscn",
+			"relative_path": "input/mouse_input/mouse_input.tscn",
+			"subfolder": "mouse_input",
+			"tags": [
+				"mouse",
+				"input"
+			],
+			"title": "Mouse Input"
+		},
+		"midi_browser_permission_browser_permission_demo": {
+			"category": "midi",
+			"description": "Interactive demonstration of browser permission",
+			"directory": "midi/browser_permission",
+			"name": "browser_permission_demo",
+			"path": "res://scenes/midi/browser_permission/browser_permission_demo.tscn",
+			"relative_path": "midi/browser_permission/browser_permission_demo.tscn",
+			"subfolder": "browser_permission",
+			"tags": [
+				"browser",
+				"permission",
+				"demo"
+			],
+			"title": "Browser Permission Demo"
+		},
+		"midi_comprehensive_midi_demo_comprehensive_midi_demo": {
+			"category": "midi",
+			"description": "Interactive demonstration of comprehensive midi",
+			"directory": "midi/comprehensive_midi_demo",
+			"name": "comprehensive_midi_demo",
+			"path": "res://scenes/midi/comprehensive_midi_demo/comprehensive_midi_demo.tscn",
+			"relative_path": "midi/comprehensive_midi_demo/comprehensive_midi_demo.tscn",
+			"subfolder": "comprehensive_midi_demo",
+			"tags": [
+				"comprehensive",
+				"midi",
+				"demo"
+			],
+			"title": "Comprehensive Midi Demo"
+		},
+		"midi_piano_adaptive_piano": {
+			"category": "midi",
+			"description": "Scene demonstrating piano",
+			"directory": "midi/piano_adaptive",
+			"name": "piano",
+			"path": "res://scenes/midi/piano_adaptive/piano.tscn",
+			"relative_path": "midi/piano_adaptive/piano.tscn",
+			"subfolder": "piano_adaptive",
+			"tags": [
+				"piano"
+			],
+			"title": "Piano"
+		},
+		"midi_piano_adaptive_piano_keys_black_piano_key_adaptive": {
+			"category": "midi",
+			"description": "Scene demonstrating black piano key adaptive",
+			"directory": "midi/piano_adaptive/piano_keys",
+			"name": "black_piano_key_adaptive",
+			"path": "res://scenes/midi/piano_adaptive/piano_keys/black_piano_key_adaptive.tscn",
+			"relative_path": "midi/piano_adaptive/piano_keys/black_piano_key_adaptive.tscn",
+			"subfolder": "piano_adaptive",
+			"tags": [
+				"black",
+				"piano",
+				"adaptive"
+			],
+			"title": "Black Piano Key Adaptive"
+		},
+		"midi_piano_adaptive_piano_keys_white_piano_key_adaptive": {
+			"category": "midi",
+			"description": "Scene demonstrating white piano key adaptive",
+			"directory": "midi/piano_adaptive/piano_keys",
+			"name": "white_piano_key_adaptive",
+			"path": "res://scenes/midi/piano_adaptive/piano_keys/white_piano_key_adaptive.tscn",
+			"relative_path": "midi/piano_adaptive/piano_keys/white_piano_key_adaptive.tscn",
+			"subfolder": "piano_adaptive",
+			"tags": [
+				"white",
+				"piano",
+				"adaptive"
+			],
+			"title": "White Piano Key Adaptive"
+		},
+		"midi_piano_piano": {
+			"category": "midi",
+			"description": "Scene demonstrating piano",
+			"directory": "midi/piano",
+			"name": "piano",
+			"path": "res://scenes/midi/piano/piano.tscn",
+			"relative_path": "midi/piano/piano.tscn",
+			"subfolder": "piano",
+			"tags": [
+				"piano"
+			],
+			"title": "Piano"
+		},
+		"midi_piano_piano_keys_black_piano_key": {
+			"category": "midi",
+			"description": "Scene demonstrating black piano key",
+			"directory": "midi/piano/piano_keys",
+			"name": "black_piano_key",
+			"path": "res://scenes/midi/piano/piano_keys/black_piano_key.tscn",
+			"relative_path": "midi/piano/piano_keys/black_piano_key.tscn",
+			"subfolder": "piano",
+			"tags": [
+				"black",
+				"piano"
+			],
+			"title": "Black Piano Key"
+		},
+		"midi_piano_piano_keys_white_piano_key": {
+			"category": "midi",
+			"description": "Scene demonstrating white piano key",
+			"directory": "midi/piano/piano_keys",
+			"name": "white_piano_key",
+			"path": "res://scenes/midi/piano/piano_keys/white_piano_key.tscn",
+			"relative_path": "midi/piano/piano_keys/white_piano_key.tscn",
+			"subfolder": "piano",
+			"tags": [
+				"white",
+				"piano"
+			],
+			"title": "White Piano Key"
+		},
+		"movement_basic_movement_basic_movement": {
+			"category": "movement",
+			"description": "Basic example showing movement",
+			"directory": "movement/basic_movement",
+			"name": "basic_movement",
+			"path": "res://scenes/movement/basic_movement/basic_movement.tscn",
+			"relative_path": "movement/basic_movement/basic_movement.tscn",
+			"subfolder": "basic_movement",
+			"tags": [
+				"beginner",
+				"movement"
+			],
+			"title": "Basic Movement"
+		},
+		"movement_platformer_movement_platformer_movement": {
+			"category": "movement",
+			"description": "Scene demonstrating platformer movement",
+			"directory": "movement/platformer_movement",
+			"name": "platformer_movement",
+			"path": "res://scenes/movement/platformer_movement/platformer_movement.tscn",
+			"relative_path": "movement/platformer_movement/platformer_movement.tscn",
+			"subfolder": "platformer_movement",
+			"tags": [
+				"platformer",
+				"movement"
+			],
+			"title": "Platformer Movement"
+		},
+		"movement_top_down_movement_top_down_movement": {
+			"category": "movement",
+			"description": "Scene demonstrating top down movement",
+			"directory": "movement/top_down_movement",
+			"name": "top_down_movement",
+			"path": "res://scenes/movement/top_down_movement/top_down_movement.tscn",
+			"relative_path": "movement/top_down_movement/top_down_movement.tscn",
+			"subfolder": "top_down_movement",
+			"tags": [
+				"down",
+				"movement"
+			],
+			"title": "Top Down Movement"
+		},
+		"physics_basic_physics_basic_physics": {
+			"category": "physics",
+			"description": "Basic example showing physics",
+			"directory": "physics/basic_physics",
+			"name": "basic_physics",
+			"path": "res://scenes/physics/basic_physics/basic_physics.tscn",
+			"relative_path": "physics/basic_physics/basic_physics.tscn",
+			"subfolder": "basic_physics",
+			"tags": [
+				"beginner",
+				"physics"
+			],
+			"title": "Basic Physics"
+		},
+		"physics_collision_detection_collision_detection": {
+			"category": "physics",
+			"description": "Scene demonstrating collision detection",
+			"directory": "physics/collision_detection",
+			"name": "collision_detection",
+			"path": "res://scenes/physics/collision_detection/collision_detection.tscn",
+			"relative_path": "physics/collision_detection/collision_detection.tscn",
+			"subfolder": "collision_detection",
+			"tags": [
+				"collision",
+				"detection"
+			],
+			"title": "Collision Detection"
+		},
+		"physics_rigid_bodies_rigid_bodies": {
+			"category": "physics",
+			"description": "Scene demonstrating rigid bodies",
+			"directory": "physics/rigid_bodies",
+			"name": "rigid_bodies",
+			"path": "res://scenes/physics/rigid_bodies/rigid_bodies.tscn",
+			"relative_path": "physics/rigid_bodies/rigid_bodies.tscn",
+			"subfolder": "rigid_bodies",
+			"tags": [
+				"rigid",
+				"bodies"
+			],
+			"title": "Rigid Bodies"
+		},
+		"visual_effects_particle_systems_particle_systems_demo": {
+			"category": "visual_effects",
+			"description": "Interactive demonstration of particle systems",
+			"directory": "visual_effects/particle_systems",
+			"name": "particle_systems_demo",
+			"path": "res://scenes/visual_effects/particle_systems/particle_systems_demo.tscn",
+			"relative_path": "visual_effects/particle_systems/particle_systems_demo.tscn",
+			"subfolder": "particle_systems",
+			"tags": [
+				"particle",
+				"systems",
+				"demo"
+			],
+			"title": "Particle Systems Demo"
+		},
+		"visual_effects_shader_effects_shader_effects_demo": {
+			"category": "visual_effects",
+			"description": "Interactive demonstration of shader effects",
+			"directory": "visual_effects/shader_effects",
+			"name": "shader_effects_demo",
+			"path": "res://scenes/visual_effects/shader_effects/shader_effects_demo.tscn",
+			"relative_path": "visual_effects/shader_effects/shader_effects_demo.tscn",
+			"subfolder": "shader_effects",
+			"tags": [
+				"shader",
+				"effects",
+				"demo"
+			],
+			"title": "Shader Effects Demo"
+		}
+	},
+	"structure": {
+		"animation": {
+			"children": [],
+			"path": "animation",
+			"scenes": [],
+			"type": "folder"
+		},
+		"animation/basic_animation": {
+			"children": [],
+			"path": "animation/basic_animation",
+			"scenes": [
+				"animation_basic_animation_basic_animation"
+			],
+			"type": "folder"
+		},
+		"animation/state_machines": {
+			"children": [],
+			"path": "animation/state_machines",
+			"scenes": [
+				"animation_state_machines_state_machines"
+			],
+			"type": "folder"
+		},
+		"animation/tweening": {
+			"children": [],
+			"path": "animation/tweening",
+			"scenes": [
+				"animation_tweening_tweening"
+			],
+			"type": "folder"
+		},
+		"audio": {
+			"children": [],
+			"path": "audio",
+			"scenes": [],
+			"type": "folder"
+		},
+		"audio/advance_audioplayer": {
+			"children": [],
+			"path": "audio/advance_audioplayer",
+			"scenes": [
+				"audio_advance_audioplayer_advance_audioplayer"
+			],
+			"type": "folder"
+		},
+		"audio/basic_audio": {
+			"children": [],
+			"path": "audio/basic_audio",
+			"scenes": [
+				"audio_basic_audio_basic_audio_demo"
+			],
+			"type": "folder"
+		},
+		"input": {
+			"children": [],
+			"path": "input",
+			"scenes": [
+				"input_input_player"
+			],
+			"type": "folder"
+		},
+		"input/gamepad_input": {
+			"children": [],
+			"path": "input/gamepad_input",
+			"scenes": [
+				"input_gamepad_input_gamepad_input"
+			],
+			"type": "folder"
+		},
+		"input/keyboard_input": {
+			"children": [],
+			"path": "input/keyboard_input",
+			"scenes": [
+				"input_keyboard_input_keyboard_input"
+			],
+			"type": "folder"
+		},
+		"input/mouse_input": {
+			"children": [],
+			"path": "input/mouse_input",
+			"scenes": [
+				"input_mouse_input_mouse_input"
+			],
+			"type": "folder"
+		},
+		"midi": {
+			"children": [],
+			"path": "midi",
+			"scenes": [],
+			"type": "folder"
+		},
+		"midi/browser_permission": {
+			"children": [],
+			"path": "midi/browser_permission",
+			"scenes": [
+				"midi_browser_permission_browser_permission_demo"
+			],
+			"type": "folder"
+		},
+		"midi/comprehensive_midi_demo": {
+			"children": [],
+			"path": "midi/comprehensive_midi_demo",
+			"scenes": [
+				"midi_comprehensive_midi_demo_comprehensive_midi_demo"
+			],
+			"type": "folder"
+		},
+		"midi/piano": {
+			"children": [],
+			"path": "midi/piano",
+			"scenes": [
+				"midi_piano_piano"
+			],
+			"type": "folder"
+		},
+		"midi/piano/piano_keys": {
+			"children": [],
+			"path": "midi/piano/piano_keys",
+			"scenes": [
+				"midi_piano_piano_keys_white_piano_key",
+				"midi_piano_piano_keys_black_piano_key"
+			],
+			"type": "folder"
+		},
+		"midi/piano/screenshots": {
+			"children": [],
+			"path": "midi/piano/screenshots",
+			"scenes": [],
+			"type": "folder"
+		},
+		"midi/piano_adaptive": {
+			"children": [],
+			"path": "midi/piano_adaptive",
+			"scenes": [
+				"midi_piano_adaptive_piano"
+			],
+			"type": "folder"
+		},
+		"midi/piano_adaptive/piano_keys": {
+			"children": [],
+			"path": "midi/piano_adaptive/piano_keys",
+			"scenes": [
+				"midi_piano_adaptive_piano_keys_white_piano_key_adaptive",
+				"midi_piano_adaptive_piano_keys_black_piano_key_adaptive"
+			],
+			"type": "folder"
+		},
+		"midi/piano_adaptive/screenshots": {
+			"children": [],
+			"path": "midi/piano_adaptive/screenshots",
+			"scenes": [],
+			"type": "folder"
+		},
+		"movement": {
+			"children": [],
+			"path": "movement",
+			"scenes": [],
+			"type": "folder"
+		},
+		"movement/basic_movement": {
+			"children": [],
+			"path": "movement/basic_movement",
+			"scenes": [
+				"movement_basic_movement_basic_movement"
+			],
+			"type": "folder"
+		},
+		"movement/platformer_movement": {
+			"children": [],
+			"path": "movement/platformer_movement",
+			"scenes": [
+				"movement_platformer_movement_platformer_movement"
+			],
+			"type": "folder"
+		},
+		"movement/top_down_movement": {
+			"children": [],
+			"path": "movement/top_down_movement",
+			"scenes": [
+				"movement_top_down_movement_top_down_movement"
+			],
+			"type": "folder"
+		},
+		"physics": {
+			"children": [],
+			"path": "physics",
+			"scenes": [],
+			"type": "folder"
+		},
+		"physics/basic_physics": {
+			"children": [],
+			"path": "physics/basic_physics",
+			"scenes": [
+				"physics_basic_physics_basic_physics"
+			],
+			"type": "folder"
+		},
+		"physics/collision_detection": {
+			"children": [],
+			"path": "physics/collision_detection",
+			"scenes": [
+				"physics_collision_detection_collision_detection"
+			],
+			"type": "folder"
+		},
+		"physics/rigid_bodies": {
+			"children": [],
+			"path": "physics/rigid_bodies",
+			"scenes": [
+				"physics_rigid_bodies_rigid_bodies"
+			],
+			"type": "folder"
+		},
+		"visual_effects": {
+			"children": [],
+			"path": "visual_effects",
+			"scenes": [],
+			"type": "folder"
+		},
+		"visual_effects/particle_systems": {
+			"children": [],
+			"path": "visual_effects/particle_systems",
+			"scenes": [
+				"visual_effects_particle_systems_particle_systems_demo"
+			],
+			"type": "folder"
+		},
+		"visual_effects/shader_effects": {
+			"children": [],
+			"path": "visual_effects/shader_effects",
+			"scenes": [
+				"visual_effects_shader_effects_shader_effects_demo"
+			],
+			"type": "folder"
+		}
+	}
+}

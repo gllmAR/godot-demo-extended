@@ -1,0 +1,106 @@
+[gd_scene load_steps=3 format=3 uid="uid://be8c1fbf47dd4"]
+
+[ext_resource type="Script" path="res://scenes/physics/collision_detection/collision_detection_demo.gd" id="1_collision"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1hnxp"]
+size = Vector2(50, 50)
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_collision")
+
+[node name="Player" type="CharacterBody2D" parent="."]
+position = Vector2(400, 300)
+
+[node name="ColorRect" type="ColorRect" parent="Player"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -25.0
+offset_top = -25.0
+offset_right = 25.0
+offset_bottom = 25.0
+color = Color(1, 1, 1, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+shape = SubResource("RectangleShape2D_1hnxp")
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="CollisionPanel" type="Panel" parent="UI"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -320.0
+offset_right = -20.0
+offset_bottom = 200.0
+color = Color(0, 0, 0, 0.8)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/CollisionPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = -10.0
+
+[node name="CollisionInfo" type="Label" parent="UI/CollisionPanel/VBoxContainer"]
+layout_mode = 2
+text = "Collisions: None detected"
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+
+[node name="DetectionInfo" type="Label" parent="UI/CollisionPanel/VBoxContainer"]
+layout_mode = 2
+text = "Active objects: 0"
+theme_override_colors/font_color = Color(0.8, 1, 1, 1)
+
+[node name="MethodInfo" type="Label" parent="UI/CollisionPanel/VBoxContainer"]
+layout_mode = 2
+text = "Method: Area Detection"
+theme_override_colors/font_color = Color(1, 0.8, 1, 1)
+
+[node name="StatusPanel" type="Panel" parent="UI"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = -120.0
+offset_right = 350.0
+offset_bottom = -20.0
+color = Color(0, 0, 0, 0.8)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/StatusPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = -10.0
+
+[node name="PerformanceInfo" type="Label" parent="UI/StatusPanel/VBoxContainer"]
+layout_mode = 2
+text = "Performance: Ready"
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+
+[node name="Instructions" type="Label" parent="UI/StatusPanel/VBoxContainer"]
+layout_mode = 2
+text = "Arrow Keys: Move player
+1-3: Switch detection methods
+R: Reset position"
+theme_override_colors/font_color = Color(0.9, 0.9, 0.9, 1)
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = -120.0
+offset_right = 400.0
+offset_bottom = -20.0
+text = "Physics Demo
+Move: Arrow Keys
+Reset: R
+Features: Momentum, friction, bouncing"

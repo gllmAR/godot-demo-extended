@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://dkp87q3xm8n4r"]
+
+[ext_resource type="Script" uid="uid://ce68kxangpm5u" path="res://scenes/visual_effects/shader_effects/shader_effects_demo.gd" id="1_shader_effects"]
+
+[node name="ShaderEffectsDemo" type="Node2D"]
+script = ExtResource("1_shader_effects")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(400, 300)
+
+[node name="Background" type="ColorRect" parent="."]
+z_index = -100
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 800.0
+offset_bottom = 600.0
+color = Color(0.05, 0.05, 0.1, 1)

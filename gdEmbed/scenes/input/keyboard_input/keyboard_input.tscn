@@ -1,0 +1,136 @@
+[gd_scene load_steps=2 format=3 uid="uid://c8qm3qak2mfj7"]
+
+[ext_resource type="Script" uid="uid://3b3i87qob5fk" path="res://scenes/input/keyboard_input/keyboard_input_demo.gd" id="1_demo"]
+
+[node name="KeyboardInputDemo" type="Node2D"]
+script = ExtResource("1_demo")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(400, 300)
+
+[node name="Player" type="ColorRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 400.0
+offset_top = 300.0
+offset_right = 450.0
+offset_bottom = 350.0
+color = Color(0.3, 0.7, 1, 1)
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="KeyboardPanel" type="Panel" parent="UI"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -280.0
+offset_top = 20.0
+offset_right = -20.0
+offset_bottom = 200.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/KeyboardPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Title" type="Label" parent="UI/KeyboardPanel/VBoxContainer"]
+layout_mode = 2
+text = "⌨️ Keyboard Input"
+horizontal_alignment = 1
+
+[node name="KeyDisplay" type="Label" parent="UI/KeyboardPanel/VBoxContainer"]
+layout_mode = 2
+text = "Press any keys..."
+autowrap_mode = 2
+
+[node name="ComboDisplay" type="Label" parent="UI/KeyboardPanel/VBoxContainer"]
+layout_mode = 2
+text = "Try key combinations!"
+autowrap_mode = 2
+
+[node name="Instructions" type="RichTextLabel" parent="UI/KeyboardPanel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+bbcode_enabled = true
+text = "[b]Try These:[/b]
+• Single keys (A, Space, Enter)
+• WASD movement
+• Ctrl+C, Ctrl+V
+• Shift+Space
+• Alt+Tab
+
+[b]Watch:[/b]
+• Key press/release timing
+• Combination detection
+• Input buffering"
+
+[node name="StatusPanel" type="Panel" parent="UI"]
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 400.0
+offset_bottom = 160.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/StatusPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Title" type="Label" parent="UI/StatusPanel/VBoxContainer"]
+layout_mode = 2
+text = "📊 Input Analysis"
+horizontal_alignment = 1
+
+[node name="BufferDisplay" type="Label" parent="UI/StatusPanel/VBoxContainer"]
+layout_mode = 2
+text = "Input Buffer: Empty"
+
+[node name="TimingDisplay" type="Label" parent="UI/StatusPanel/VBoxContainer"]
+layout_mode = 2
+text = "Timing: Ready"
+
+[node name="ConceptPanel" type="Panel" parent="UI"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -300.0
+offset_top = -180.0
+offset_right = -20.0
+offset_bottom = -20.0
+
+[node name="ConceptLabel" type="RichTextLabel" parent="UI/ConceptPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+bbcode_enabled = true
+text = "[b]Key Concepts:[/b]
+
+• [color=yellow]Input Events[/color]: Press/release detection
+• [color=cyan]Key Combinations[/color]: Multiple simultaneous keys
+• [color=orange]Input Buffering[/color]: Recent input history
+• [color=lime]Timing Analysis[/color]: Response patterns"

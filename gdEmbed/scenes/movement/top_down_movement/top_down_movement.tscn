@@ -1,0 +1,144 @@
+[gd_scene load_steps=3 format=3 uid="uid://b120f58ea5dc8"]
+
+[ext_resource type="Script" uid="uid://ddjr2loypxhy4" path="res://scenes/movement/top_down_movement/top_down_movement.gd" id="1_m2y6c"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1"]
+size = Vector2(40, 40)
+
+[node name="TopDownMovementDemo" type="Node2D"]
+script = ExtResource("1_m2y6c")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(400, 300)
+
+[node name="Player" type="CharacterBody2D" parent="."]
+position = Vector2(400, 300)
+
+[node name="PlayerSprite" type="ColorRect" parent="Player"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+color = Color(0.2, 0.8, 0.4, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+shape = SubResource("RectangleShape2D_1")
+
+[node name="Trail2D" type="Line2D" parent="Player"]
+width = 4.0
+default_color = Color(1, 0.6, 0, 1)
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="ParameterPanel" type="Panel" parent="UI"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -250.0
+offset_top = 20.0
+offset_right = -20.0
+offset_bottom = 180.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/ParameterPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Title" type="Label" parent="UI/ParameterPanel/VBoxContainer"]
+layout_mode = 2
+text = "🎮 Top-Down Movement"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SpeedContainer" type="HBoxContainer" parent="UI/ParameterPanel/VBoxContainer"]
+layout_mode = 2
+
+[node name="SpeedLabel" type="Label" parent="UI/ParameterPanel/VBoxContainer/SpeedContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Speed: 200 px/s"
+
+[node name="SpeedSlider" type="HSlider" parent="UI/ParameterPanel/VBoxContainer/SpeedContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+min_value = 50.0
+max_value = 400.0
+step = 10.0
+value = 200.0
+
+[node name="NormalizeContainer" type="HBoxContainer" parent="UI/ParameterPanel/VBoxContainer"]
+layout_mode = 2
+
+[node name="NormalizeLabel" type="Label" parent="UI/ParameterPanel/VBoxContainer/NormalizeContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Normalize Diagonal:"
+
+[node name="NormalizeCheckbox" type="CheckBox" parent="UI/ParameterPanel/VBoxContainer/NormalizeContainer"]
+layout_mode = 2
+button_pressed = true
+
+[node name="Instructions" type="RichTextLabel" parent="UI/ParameterPanel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+bbcode_enabled = true
+text = "[b]Controls:[/b]
+• WASD or Arrow Keys to move
+• Try diagonal movement
+• Toggle normalization to see effect
+
+[b]Concepts:[/b]
+• 8-directional movement
+• Vector normalization
+• Diagonal speed consistency"
+
+[node name="StatusPanel" type="Panel" parent="UI"]
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 400.0
+offset_bottom = 140.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/StatusPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Title" type="Label" parent="UI/StatusPanel/VBoxContainer"]
+layout_mode = 2
+text = "📊 Live Status"
+horizontal_alignment = 1
+
+[node name="VelocityLabel" type="Label" parent="UI/StatusPanel/VBoxContainer"]
+layout_mode = 2
+text = "Velocity: (0.0, 0.0)"
+
+[node name="PositionLabel" type="Label" parent="UI/StatusPanel/VBoxContainer"]
+layout_mode = 2
+text = "Position: (400.0, 300.0)"
+
+[node name="InputLabel" type="Label" parent="UI/StatusPanel/VBoxContainer"]
+layout_mode = 2
+text = "Input: None"
+
+[node name="DirectionLabel" type="Label" parent="UI/StatusPanel/VBoxContainer"]
+layout_mode = 2
+text = "Direction: N/A | Magnitude: 0.00 | Speed: 0.0 px/s"

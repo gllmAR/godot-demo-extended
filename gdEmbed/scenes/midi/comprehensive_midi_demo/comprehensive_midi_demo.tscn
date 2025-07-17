@@ -1,0 +1,278 @@
+[gd_scene load_steps=2 format=3 uid="uid://dtrmtycb3a3u3"]
+
+[ext_resource type="Script" path="res://scenes/midi/comprehensive_midi_demo/comprehensive_midi_demo.gd" id="1_1qjhx"]
+
+[node name="ComprehensiveMIDIDemo" type="Node2D"]
+script = ExtResource("1_1qjhx")
+
+[node name="UIContainer" type="VBoxContainer" parent="."]
+offset_right = 350.0
+offset_bottom = 800.0
+size_flags_horizontal = 3
+
+[node name="TitlePanel" type="Panel" parent="UIContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UIContainer/TitlePanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = -10.0
+
+[node name="TitleLabel" type="Label" parent="UIContainer/TitlePanel/VBoxContainer"]
+layout_mode = 2
+text = "🎹 Comprehensive MIDI Demo"
+horizontal_alignment = 1
+
+[node name="DescriptionLabel" type="Label" parent="UIContainer/TitlePanel/VBoxContainer"]
+layout_mode = 2
+text = "Complete MIDI input handling with device selection, debug display, and sampler with ADSR envelope"
+autowrap_mode = 3
+
+[node name="StatusPanel" type="Panel" parent="UIContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UIContainer/StatusPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = -10.0
+
+[node name="StatusTitle" type="Label" parent="UIContainer/StatusPanel/VBoxContainer"]
+layout_mode = 2
+text = "📊 MIDI Status"
+
+[node name="MIDIStatusLabel" type="Label" parent="UIContainer/StatusPanel/VBoxContainer"]
+layout_mode = 2
+text = "Initializing MIDI..."
+autowrap_mode = 3
+
+[node name="DevicePanel" type="Panel" parent="UIContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UIContainer/DevicePanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = -10.0
+
+[node name="DeviceTitle" type="Label" parent="UIContainer/DevicePanel/VBoxContainer"]
+layout_mode = 2
+text = "🎛️ MIDI Devices"
+
+[node name="DeviceSelector" type="OptionButton" parent="UIContainer/DevicePanel/VBoxContainer"]
+layout_mode = 2
+text = "No device selected"
+
+[node name="RefreshButton" type="Button" parent="UIContainer/DevicePanel/VBoxContainer"]
+layout_mode = 2
+text = "🔄 Refresh Devices"
+
+[node name="PermissionButton" type="Button" parent="UIContainer/DevicePanel/VBoxContainer"]
+layout_mode = 2
+text = "🔒 Request MIDI Permission"
+
+[node name="SamplerPanel" type="Panel" parent="UIContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UIContainer/SamplerPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = -10.0
+
+[node name="SamplerTitle" type="Label" parent="UIContainer/SamplerPanel/VBoxContainer"]
+layout_mode = 2
+text = "🔊 Sampler Controls"
+
+[node name="VolumeContainer" type="HBoxContainer" parent="UIContainer/SamplerPanel/VBoxContainer"]
+layout_mode = 2
+
+[node name="VolumeLabel" type="Label" parent="UIContainer/SamplerPanel/VBoxContainer/VolumeContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Volume: 80%"
+
+[node name="VolumeSlider" type="HSlider" parent="UIContainer/SamplerPanel/VBoxContainer/VolumeContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 100.0
+step = 1.0
+value = 80.0
+
+[node name="InstructionsLabel" type="Label" parent="UIContainer/SamplerPanel/VBoxContainer"]
+layout_mode = 2
+text = "💡 Virtual Keyboard:
+A,S,D,F,G,H,J = White keys
+W,E,T,Y,U = Black keys"
+autowrap_mode = 3
+
+[node name="ADSRPanel" type="Panel" parent="UIContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UIContainer/ADSRPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = -10.0
+
+[node name="ADSRTitle" type="Label" parent="UIContainer/ADSRPanel/VBoxContainer"]
+layout_mode = 2
+text = "🎚️ ADSR Envelope"
+
+[node name="AttackContainer" type="HBoxContainer" parent="UIContainer/ADSRPanel/VBoxContainer"]
+layout_mode = 2
+
+[node name="AttackLabel" type="Label" parent="UIContainer/ADSRPanel/VBoxContainer/AttackContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Attack: 100ms"
+
+[node name="AttackSlider" type="HSlider" parent="UIContainer/ADSRPanel/VBoxContainer/AttackContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 1000.0
+step = 10.0
+value = 100.0
+
+[node name="DecayContainer" type="HBoxContainer" parent="UIContainer/ADSRPanel/VBoxContainer"]
+layout_mode = 2
+
+[node name="DecayLabel" type="Label" parent="UIContainer/ADSRPanel/VBoxContainer/DecayContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Decay: 300ms"
+
+[node name="DecaySlider" type="HSlider" parent="UIContainer/ADSRPanel/VBoxContainer/DecayContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 2000.0
+step = 10.0
+value = 300.0
+
+[node name="SustainContainer" type="HBoxContainer" parent="UIContainer/ADSRPanel/VBoxContainer"]
+layout_mode = 2
+
+[node name="SustainLabel" type="Label" parent="UIContainer/ADSRPanel/VBoxContainer/SustainContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Sustain: 70%"
+
+[node name="SustainSlider" type="HSlider" parent="UIContainer/ADSRPanel/VBoxContainer/SustainContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 100.0
+step = 1.0
+value = 70.0
+
+[node name="ReleaseContainer" type="HBoxContainer" parent="UIContainer/ADSRPanel/VBoxContainer"]
+layout_mode = 2
+
+[node name="ReleaseLabel" type="Label" parent="UIContainer/ADSRPanel/VBoxContainer/ReleaseContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Release: 500ms"
+
+[node name="ReleaseSlider" type="HSlider" parent="UIContainer/ADSRPanel/VBoxContainer/ReleaseContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 3000.0
+step = 10.0
+value = 500.0
+
+[node name="DebugPanel" type="Panel" parent="UIContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UIContainer/DebugPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = -10.0
+
+[node name="DebugTitle" type="Label" parent="UIContainer/DebugPanel/VBoxContainer"]
+layout_mode = 2
+text = "🐛 MIDI Debug Log"
+
+[node name="MIDILog" type="TextEdit" parent="UIContainer/DebugPanel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+placeholder_text = "MIDI messages will appear here..."
+editable = false
+
+[node name="ClearButton" type="Button" parent="UIContainer/DebugPanel/VBoxContainer"]
+layout_mode = 2
+text = "🧹 Clear Log"
+
+[node name="DemoArea" type="Node2D" parent="."]
+
+[node name="KeyboardVisual" type="Node2D" parent="DemoArea"]
+
+[node name="EnvelopeDisplay" type="Control" parent="DemoArea"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 500.0
+offset_top = 200.0
+offset_right = 700.0
+offset_bottom = 350.0
+
+[node name="EnvelopeLabel" type="Label" parent="DemoArea/EnvelopeDisplay"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -100.0
+offset_bottom = 23.0
+text = "🎵 Envelope Display"
+horizontal_alignment = 1
+
+[node name="Background" type="ColorRect" parent="DemoArea"]
+offset_left = 400.0
+offset_top = 50.0
+offset_right = 900.0
+offset_bottom = 600.0
+color = Color(0.1, 0.1, 0.1, 0.1)
+
+[node name="InfoLabel" type="Label" parent="DemoArea"]
+offset_left = 420.0
+offset_top = 70.0
+offset_right = 880.0
+offset_bottom = 150.0
+text = "🎹 Visual Piano Keyboard
+
+Connect a MIDI device or use the virtual keyboard:
+• A,S,D,F,G,H,J = White keys (C,D,E,F,G,A,B)
+• W,E,T,Y,U = Black keys (C#,D#,F#,G#,A#)
+
+MIDI messages will be logged in real-time.
+Adjust ADSR envelope for sound shaping."
+autowrap_mode = 3

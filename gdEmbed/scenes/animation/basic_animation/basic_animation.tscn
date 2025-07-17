@@ -1,0 +1,176 @@
+[gd_scene load_steps=2 format=3 uid="uid://b726e38b44fdf"]
+
+[ext_resource type="Script" uid="uid://c388qhvhrllqo" path="res://scenes/animation/basic_animation/basic_animation_demo.gd" id="1_animation"]
+
+[node name="BasicAnimationDemo" type="Node2D"]
+script = ExtResource("1_animation")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(400, 300)
+
+[node name="AnimatedSquare" type="ColorRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -30.0
+offset_top = -30.0
+offset_right = 30.0
+offset_bottom = 30.0
+color = Color(1, 0, 1, 1)
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="InstructionPanel" type="Panel" parent="UI"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = -120.0
+offset_right = 380.0
+offset_bottom = -10.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/InstructionPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Title" type="Label" parent="UI/InstructionPanel/VBoxContainer"]
+layout_mode = 2
+text = "🎬 Basic Animation"
+horizontal_alignment = 1
+
+[node name="Instructions" type="RichTextLabel" parent="UI/InstructionPanel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+bbcode_enabled = true
+text = "[b]Features:[/b]
+• Keyframe-based animation system
+• Position, scale, rotation, and color interpolation
+• Multiple animation patterns
+• Speed control and looping
+
+[b]Concepts:[/b]
+• Linear interpolation (lerp)
+• Animation timing and keyframes"
+
+[node name="ControlPanel" type="Panel" parent="UI"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -300.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = 220.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/ControlPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ControlTitle" type="Label" parent="UI/ControlPanel/VBoxContainer"]
+layout_mode = 2
+text = "🎮 Animation Controls"
+horizontal_alignment = 1
+
+[node name="AnimationContainer" type="HBoxContainer" parent="UI/ControlPanel/VBoxContainer"]
+layout_mode = 2
+
+[node name="AnimationLabel" type="Label" parent="UI/ControlPanel/VBoxContainer/AnimationContainer"]
+layout_mode = 2
+text = "Animation:"
+
+[node name="AnimationSelector" type="OptionButton" parent="UI/ControlPanel/VBoxContainer/AnimationContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="PlayButton" type="Button" parent="UI/ControlPanel/VBoxContainer"]
+layout_mode = 2
+text = "▶️ Play"
+
+[node name="StopButton" type="Button" parent="UI/ControlPanel/VBoxContainer"]
+layout_mode = 2
+disabled = true
+text = "⏹️ Stop"
+
+[node name="LoopContainer" type="HBoxContainer" parent="UI/ControlPanel/VBoxContainer"]
+layout_mode = 2
+
+[node name="LoopLabel" type="Label" parent="UI/ControlPanel/VBoxContainer/LoopContainer"]
+layout_mode = 2
+text = "Loop:"
+
+[node name="LoopCheckbox" type="CheckBox" parent="UI/ControlPanel/VBoxContainer/LoopContainer"]
+layout_mode = 2
+button_pressed = true
+
+[node name="SpeedContainer" type="HBoxContainer" parent="UI/ControlPanel/VBoxContainer"]
+layout_mode = 2
+
+[node name="SpeedLabel" type="Label" parent="UI/ControlPanel/VBoxContainer/SpeedContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Speed: 1.0x"
+
+[node name="SpeedSlider" type="HSlider" parent="UI/ControlPanel/VBoxContainer/SpeedContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+min_value = 0.1
+max_value = 3.0
+step = 0.1
+value = 1.0
+
+[node name="StatusPanel" type="Panel" parent="UI"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -300.0
+offset_top = -120.0
+offset_right = -10.0
+offset_bottom = -10.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/StatusPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="StatusTitle" type="Label" parent="UI/StatusPanel/VBoxContainer"]
+layout_mode = 2
+text = "📊 Animation Status"
+horizontal_alignment = 1
+
+[node name="StatusLabel" type="Label" parent="UI/StatusPanel/VBoxContainer"]
+layout_mode = 2
+text = "Status: Stopped"
+
+[node name="TimeLabel" type="Label" parent="UI/StatusPanel/VBoxContainer"]
+layout_mode = 2
+text = "Time: 0.00 / 2.00 s"
+
+[node name="FrameLabel" type="Label" parent="UI/StatusPanel/VBoxContainer"]
+layout_mode = 2
+text = "Frame: 1 / 5"

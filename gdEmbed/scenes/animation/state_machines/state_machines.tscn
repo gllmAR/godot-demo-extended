@@ -1,0 +1,138 @@
+[gd_scene load_steps=2 format=3 uid="uid://b62e5baadbe16"]
+
+[ext_resource type="Script" uid="uid://dhog31vtf5r7r" path="res://scenes/animation/state_machines/state_machines_demo.gd" id="1_state_machine"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_state_machine")
+
+[node name="Player" type="CharacterBody2D" parent="."]
+position = Vector2(400, 300)
+
+[node name="ColorRect" type="ColorRect" parent="Player"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -25.0
+offset_top = -25.0
+offset_right = 25.0
+offset_bottom = 25.0
+color = Color(0.8, 0.8, 0.8, 1)
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="StatePanel" type="Panel" parent="UI"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -320.0
+offset_right = -20.0
+offset_bottom = 350.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/StatePanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="StateInfo" type="Label" parent="UI/StatePanel/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "State: IDLE"
+
+[node name="PreviousStateInfo" type="Label" parent="UI/StatePanel/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8, 0.8, 1, 1)
+text = "Previous: None"
+
+[node name="TransitionInfo" type="Label" parent="UI/StatePanel/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 0.8, 1)
+text = "Transition: None"
+
+[node name="TimerInfo" type="Label" parent="UI/StatePanel/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.8, 1, 1)
+text = "Timer: 0.0s"
+
+[node name="CooldownInfo" type="Label" parent="UI/StatePanel/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 0.8, 1)
+text = "Attack Cooldown: 0.0s"
+
+[node name="DefenseInfo" type="Label" parent="UI/StatePanel/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.8, 0.8, 1)
+text = "Defense Charge: 0.0"
+
+[node name="StunInfo" type="Label" parent="UI/StatePanel/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8, 1, 0.8, 1)
+text = "Stun Duration: 0.0s"
+
+[node name="StatusPanel" type="Panel" parent="UI"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -320.0
+offset_top = -200.0
+offset_right = -20.0
+offset_bottom = -20.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/StatusPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ControlsInfo" type="Label" parent="UI/StatusPanel/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9, 0.9, 0.9, 1)
+text = "Arrow Keys: Move | Space: Jump
+1: Attack | 2: Defend
+Watch the state transitions!"
+
+[node name="ControlPanel" type="Panel" parent="UI"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = -150.0
+offset_right = 400.0
+offset_bottom = -20.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/ControlPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Instructions" type="Label" parent="UI/ControlPanel/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9, 0.9, 0.9, 1)
+text = "Arrow Keys: Move
+Space: Jump
+1: Attack (with cooldown)
+2: Defend (hold to charge)
+Watch state transitions!"
